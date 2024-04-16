@@ -17,3 +17,14 @@ spring:
 jwt:
   issuer: ajufresh@gmail.com
   secret_key: study-springboot
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client_id: 365073913858-vnimah3do1civb2eq7257qmr4mk1pp31.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
