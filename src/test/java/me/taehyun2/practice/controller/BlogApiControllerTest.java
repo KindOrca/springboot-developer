@@ -81,7 +81,8 @@ class BlogApiControllerTest {
         final String url = "/api/articles";
         final String title = "title";
         final String content = "content";
-        blogRepository.save(new Article(title, content));
+        final String author = "author";
+        blogRepository.save(new Article(author, title, content));
 
         // when
         ResultActions resultActions = mockMvc.perform(get(url).accept(MediaType.APPLICATION_JSON));
@@ -100,7 +101,8 @@ class BlogApiControllerTest {
         final String url = "/api/articles/{id}";
         final String title = "title";
         final String content = "content";
-        Article savedArticle = blogRepository.save(new Article(title, content));
+        final String author = "author";
+        Article savedArticle = blogRepository.save(new Article(author, title, content));
 
         // when
         mockMvc.perform(delete(url, savedArticle.getId())).andExpect(status().isOk());
@@ -118,7 +120,8 @@ class BlogApiControllerTest {
         final String url = "/api/articles/{id}";
         final String title = "title";
         final String content = "content";
-        Article savedArticle = blogRepository.save(new Article(title, content));
+        final String author = "author";
+        Article savedArticle = blogRepository.save(new Article(author, title, content));
 
         final String newTitle = "newTitle";
         final String newContent = "newContent";
